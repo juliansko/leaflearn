@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:leaflearn/router/router_config.dart';
 import 'themes/dark.dart';
 import 'themes/light.dart';
 import 'pages/home.dart';
@@ -14,11 +15,11 @@ class MyApp extends StatelessWidget {
   // application root
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       title: 'LeafLearn',
       theme: lightTheme,
       darkTheme: darkTheme,
-      home: const StartPage(title: 'LeafLearn Home'),
+      routerConfig: router,
     );
   }
 }
