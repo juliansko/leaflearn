@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import '../../parts/appbar.dart';
+import '../../parts/navbottom.dart';
 
 class StartPage extends StatefulWidget {
-  const StartPage({super.key, required this.title});
+  const StartPage({super.key});
 
   // This widget is the home page of your application. It is stateful, meaning
   // that it has a State object (defined below) that contains fields that affect
@@ -13,7 +14,6 @@ class StartPage extends StatefulWidget {
   // used by the build method of the State. Fields in a Widget subclass are
   // always marked "final".
 
-  final String title;
 
   @override
   State<StartPage> createState() => _StartPageState();
@@ -80,18 +80,7 @@ class _StartPageState extends State<StartPage> {
         tooltip: 'Increment',
         child: const Icon(Icons.home),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-          BottomNavigationBarItem(icon: Icon(Icons.book), label: 'Library'),
-          BottomNavigationBarItem(icon: Icon(Icons.play_arrow), label: 'Play'),
-          BottomNavigationBarItem(icon: Icon(Icons.message), label: 'Messages'),
-        ],
-        showSelectedLabels: false,
-        showUnselectedLabels: false,
-        type: BottomNavigationBarType.fixed,
-      ),// This trailing comma makes auto-formatting nicer for build methods.
+      bottomNavigationBar: makeNavBottom(context),// This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }

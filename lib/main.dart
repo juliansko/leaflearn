@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:leaflearn/src/pages/settings.dart';
 import 'themes/dark.dart';
 import 'themes/light.dart';
 import 'src/pages/home.dart';
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
       title: 'LeafLearn',
       theme: lightTheme,
       darkTheme: darkTheme,
-      home: const StartPage(title: 'LeafLearn Home'),
+      home: const StartPage(),
     );
 
   }
