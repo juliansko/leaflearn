@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../parts/appbar.dart';
+import '../parts/appbar.dart';
 
 class StartPage extends StatefulWidget {
   const StartPage({super.key, required this.title});
@@ -67,10 +67,7 @@ class _StartPageState extends State<StartPage> {
             ),
             Text(
               '$_counter',
-              style: Theme
-                  .of(context)
-                  .textTheme
-                  .headlineMedium,
+              style: Theme.of(context).textTheme.headlineMedium,
             ),
           ],
         ),
@@ -91,7 +88,7 @@ class _StartPageState extends State<StartPage> {
         showSelectedLabels: false,
         showUnselectedLabels: false,
         type: BottomNavigationBarType.fixed,
-      ),// This trailing comma makes auto-formatting nicer for build methods.
+      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }

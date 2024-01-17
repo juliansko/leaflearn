@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'themes/dark.dart';
 import 'themes/light.dart';
-import 'src/pages/home.dart';
+import 'pages/home.dart';
 
 void main() {
   // starts app
@@ -20,10 +20,5 @@ class MyApp extends StatelessWidget {
       darkTheme: darkTheme,
       home: const StartPage(title: 'LeafLearn Home'),
     );
-
   }
 }
-
-
-
-
