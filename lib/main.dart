@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:leaflearn/router/router_config.dart';
 import 'themes/dark.dart';
 import 'themes/light.dart';
-import 'pages/home.dart';
 
 void main() {
   // starts app

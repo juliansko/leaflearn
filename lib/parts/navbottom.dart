@@ -18,14 +18,31 @@ class NavBottom extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.grey,
+        actions: <Widget>[
+          Padding(
+            padding: const EdgeInsets.only(
+                right:
+                    20.0), // idk why this needs to be const but the app is so much faster when it is
+            child: Image.asset(
+              'images/logo.png',
+              height: 50,
+            ),
+          )
+        ],
+      ),
       body: navigationShell,
       bottomNavigationBar: NavigationBar(
         selectedIndex: navigationShell.currentIndex,
         destinations: const [
-          NavigationDestination(label: 'home', icon: Icon(Icons.home)),
-          NavigationDestination(label: 'settings', icon: Icon(Icons.settings)),
+          NavigationDestination(icon: Icon(Icons.home), label: 'home'),
+          NavigationDestination(icon: Icon(Icons.book), label: 'courses'),
+          NavigationDestination(icon: Icon(Icons.chat), label: 'messenger'),
+          NavigationDestination(icon: Icon(Icons.settings), label: 'settings'),
         ],
         onDestinationSelected: _goBranch,
+        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
       ),
     );
   }
