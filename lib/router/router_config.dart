@@ -5,6 +5,7 @@ import 'package:leaflearn/pages/home.dart';
 import 'package:leaflearn/pages/settings.dart';
 import 'package:leaflearn/pages/courses.dart';
 import 'package:leaflearn/pages/messenger.dart';
+import 'package:leaflearn/router/nestednavigation.dart';
 
 final _rootNavigatorKey = GlobalKey<NavigatorState>();
 final _shellNavigatorKeyHome =
@@ -22,7 +23,7 @@ final router = GoRouter(
     routes: [
       StatefulShellRoute.indexedStack(
           builder: (context, state, navigationShell) {
-            return AppBars(navigationShell: navigationShell);
+            return NestedNavigation(navigationShell: navigationShell);
           },
           branches: [
             StatefulShellBranch(
