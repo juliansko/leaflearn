@@ -15,7 +15,7 @@ class AppBars extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.grey,
+        backgroundColor: Colors.grey[700],
         actions: <Widget>[
           Padding(
             padding: const EdgeInsets.only(right: 20.0),

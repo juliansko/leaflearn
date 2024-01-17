@@ -21,20 +21,23 @@ class NestedNavigation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(builder: (context, constraints) {
-      // layout breakpoint: tweak as needed
-      if (constraints.maxWidth < 450) {
-        return AppBars(
-          body: navigationShell,
-          selectedIndex: navigationShell.currentIndex,
-          onDestinationSelected: _goBranch,
-        );
-      } else {
-        return NavRail(
-          body: navigationShell,
-          selectedIndex: navigationShell.currentIndex,
-          onDestinationSelected: _goBranch,
-        );
-      }
+      return OrientationBuilder(builder: (context, orientation) {
+        bool mobile =
+            constraints.maxWidth < 450 || orientation == Orientation.portrait;
+        if (mobile) {
+          return AppBars(
+            body: navigationShell,
+            selectedIndex: navigationShell.currentIndex,
+            onDestinationSelected: _goBranch,
+          );
+        } else {
+          return NavRail(
+            body: navigationShell,
+            selectedIndex: navigationShell.currentIndex,
+            onDestinationSelected: _goBranch,
+          );
+        }
+      });
     });
   }
 }
