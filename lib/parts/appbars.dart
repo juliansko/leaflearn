@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class NavBottom extends StatelessWidget {
-  const NavBottom({
+class AppBars extends StatelessWidget {
+  const AppBars({
     Key? key,
     required this.navigationShell,
   }) : super(key: key ?? const ValueKey('ScaffoldWithNestedNavigation'));
