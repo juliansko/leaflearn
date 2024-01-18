@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:leaflearn/parts/appbars.dart';
 import 'package:leaflearn/pages/home.dart';
 import 'package:leaflearn/pages/settings.dart';
 import 'package:leaflearn/pages/courses.dart';
