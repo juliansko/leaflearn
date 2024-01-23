@@ -14,27 +14,26 @@ void main() {
 }
 
 class App extends StatelessWidget {
-   App({super.key});
+  App({super.key});
 
   final LoginInfo loginInfo = LoginInfo();
 
   // application root
   @override
   Widget build(BuildContext context) => ChangeNotifierProvider<LoginInfo>.value(
-    
-      value: loginInfo,
-      child: MaterialApp.router(
-        routerConfig: _router,
-        darkTheme: darkTheme,
-        theme: lightTheme,
-        debugShowCheckedModeBanner: false,
-      ),
-    );
+        value: loginInfo,
+        child: MaterialApp.router(
+          routerConfig: _router,
+          darkTheme: darkTheme,
+          theme: lightTheme,
+          debugShowCheckedModeBanner: false,
+        ),
+      );
 
-    late final GoRouter _router = GoRouter(
-      routes: $appRoutes,
+  late final GoRouter _router = GoRouter(
+    routes: $appRoutes,
 
-      redirect: (BuildContext context, GoRouterState state) {
+    redirect: (BuildContext context, GoRouterState state) {
       final bool loggedIn = loginInfo.loggedIn;
 
       // check just the matchedLocation in case there are query parameters
@@ -60,4 +59,3 @@ class App extends StatelessWidget {
     refreshListenable: loginInfo,
   );
 }
-

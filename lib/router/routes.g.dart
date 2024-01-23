@@ -9,6 +9,7 @@ part of 'routes.dart';
 List<RouteBase> get $appRoutes => [
       $shellRouteData,
       $loginRoute,
+      $root,
     ];
 
 RouteBase get $shellRouteData => StatefulShellRouteData.$route(
@@ -165,6 +166,28 @@ extension $LoginRouteExtension on LoginRoute {
         queryParams: {
           if (from != null) 'from': from,
         },
+      );
+
+  void go(BuildContext context) => context.go(location);
+
+  Future<T?> push<T>(BuildContext context) => context.push<T>(location);
+
+  void pushReplacement(BuildContext context) =>
+      context.pushReplacement(location);
+
+  void replace(BuildContext context) => context.replace(location);
+}
+
+RouteBase get $root => GoRouteData.$route(
+      path: '/',
+      factory: $RootExtension._fromState,
+    );
+
+extension $RootExtension on Root {
+  static Root _fromState(GoRouterState state) => Root();
+
+  String get location => GoRouteData.$location(
+        '/',
       );
 
   void go(BuildContext context) => context.go(location);
