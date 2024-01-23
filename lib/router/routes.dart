@@ -12,6 +12,7 @@ import 'package:leaflearn/router/nestednavigation.dart';
 
 part 'routes.g.dart';
 
+// Initialize keys for all the branches and their sub routes
 final _rootNavigatorKey = GlobalKey<NavigatorState>();
 final _shellNavigatorKeyHome =
     GlobalKey<NavigatorState>(debugLabel: 'shellHome');
@@ -22,7 +23,7 @@ final _shellNavigatorKeyCourses =
 final _shellNavigatorKeyMessenger =
     GlobalKey<NavigatorState>(debugLabel: 'shellMessenger');
 
-// Route data
+// Entire navigation Tree for the Branches
 @TypedStatefulShellRoute<ShellRouteData>(
   branches: <TypedStatefulShellBranch<StatefulShellBranchData>>[
     TypedStatefulShellBranch<HomeShellBranch>(routes: <TypedRoute<RouteData>>[
@@ -50,6 +51,8 @@ final _shellNavigatorKeyMessenger =
         ]),
   ],
 )
+
+// Define all Routes
 class ShellRouteData extends StatefulShellRouteData {
   const ShellRouteData();
 
@@ -113,6 +116,7 @@ class SettingsRoute extends GoRouteData {
       const SettingsPage();
 }
 
+// Not part of the branch tree
 @TypedGoRoute<LoginRoute>(
   path: '/login',
 )
@@ -124,6 +128,7 @@ class LoginRoute extends GoRouteData {
   Widget build(BuildContext context, GoRouterState state) => LoginPage(from);
 }
 
+// Only there for redirection purposes
 @TypedGoRoute<Root>(
   path: '/',
 )
