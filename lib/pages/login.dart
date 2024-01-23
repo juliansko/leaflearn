@@ -45,21 +45,8 @@ class _LoginPageState extends State<LoginPage> {
           ),
           ElevatedButton(
             onPressed: () {
-              if (_userNameController.text == 'user' &&
-                  _passwordController.text == 'password') {
-                context.read<LoginInfo>().login('user');
-                if (widget.from != null && widget.from != '/home') {
-                  context.go(widget.from!);
-                } else {
-                  context.go(HomeRoute(loggedIn: true).location);
-                }
-              } else {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(
-                    content: Text('Invalid username or password'),
-                  ),
-                );
-              }
+              login(context, widget, _userNameController.text,
+                  _passwordController.text, widget.from);
             },
             child: Text('Login'),
           ),
