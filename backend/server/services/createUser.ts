@@ -1,9 +1,10 @@
-import { UserModel } from "../models/userModel";
-import sampleUser from "../samples/sampleUser.json";
+import { UserInterface, UserModel } from "../models/userModel";
 
-export const createUser = async () => {
+export async function createUser(userData: UserInterface){
     try {
-        const user = new UserModel(sampleUser);
+        // creates a new user with the given data
+        const user = new UserModel(userData);
+        // saves the user to the database
         user.save();
         console.log(user);
     } catch (error) {

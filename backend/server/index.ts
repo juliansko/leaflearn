@@ -1,17 +1,20 @@
-import express, {Request, Response} from 'express';
-import {run} from './services/connectService';
-import { authUser } from './login/auth';
+import express from 'express';
+import {connectToMongo} from './services/connectService';
+import { authUser } from './services/authService';
+import { routes } from './routes';
 
 const app = express();
+
+// gets port either from environment variable or sets it to 3000 if not found
 const port = process.env.PORT || 3000;
 
-app.get('/', (req: Request, res: Response) => {
-    res.send('Hello, TypeScript Express!');
-  });
-  
+// imports all routes from routes/index.ts
+app.use('/', routes);
+
+// starts server
 app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);
-    run().catch(err => console.log(err));
-    authUser("john@smith.com", "test1234").catch(err => console.log(err));
+    // connects to MongoDB
+    connectToMongo().catch(err => console.log(err));
   });
   

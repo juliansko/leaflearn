@@ -44,3 +44,4 @@ app.*.map.json
 
 # Node.js related
 node_modules/
+.env
