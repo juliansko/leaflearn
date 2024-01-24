@@ -5,6 +5,7 @@ export const authRoute = Router();
 
 authRoute.post('/login', async (req, res) => {
     try {
+        // calls the Authentacation Service with the email and password from the request body
         const user = await authService(req.body.email, req.body.password);
         res.status(200).send(user);
     } catch (error) {
