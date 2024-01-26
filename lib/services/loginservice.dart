@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:go_router/go_router.dart';
 import 'package:leaflearn/router/routes.dart';
+import 'dart:async';
+import 'dart:convert';
+import 'package:http/http.dart' as http;
 
 // Creates class LoginInfo
 class LoginInfo extends ChangeNotifier {
@@ -24,23 +27,38 @@ class LoginInfo extends ChangeNotifier {
 }
 
 void loginUser(BuildContext context, Widget widget, String username,
-    String pass, String? from) {
+    String pass, String? from) async {
   // checks if the username and password are correct
-  if (username == 'user' && pass == 'password') {
-    // reads and refreshes the context regarding the logininfo
-    context.read<LoginInfo>().login('user');
-    // goes to the page it got redirected from or to home if not redirected
-    if (from != null && from != '/home') {
-      context.go(from);
+  Uri url = Uri.http('localhost:3000', '/login');
+  Map<String, String> requestBody = {
+    'email': username,
+    'password': pass,
+  };
+
+  try {
+    final response = await http.post(url,
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: json.encode(requestBody));
+    print(response);
+    if (response.statusCode == 200) {
+      context.read<LoginInfo>().login('user');
+      // goes to the page it got redirected from or to home if not redirected
+      if (from != null && from != '/home') {
+        context.go(from);
+      } else {
+        context.go(HomeRoute(loggedIn: true).location);
+      }
+      // shows an error message if the username or password is incorrect
     } else {
-      context.go(HomeRoute(loggedIn: true).location);
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Invalid username or password'),
+        ),
+      );
     }
-    // shows an error message if the username or password is incorrect
-  } else {
-    ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(
-        content: Text('Invalid username or password'),
-      ),
-    );
+  } catch (e) {
+    print(e);
   }
 }
