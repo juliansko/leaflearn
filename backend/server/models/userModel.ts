@@ -1,8 +1,5 @@
 import { Schema, model } from "mongoose";
 
-// define enum for gender and role so no "wrong" values can be used
-
-
 
 // defines the schema for the user collection, this is for the typescript side
 export interface UserInterface {

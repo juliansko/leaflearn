@@ -7,6 +7,7 @@ export async function createUser(userData: UserInterface){
         // saves the user to the database
         user.save();
         console.log(user);
+        return user;
     } catch (error) {
         console.log("Error creating sample user: ", error);
     }

@@ -3,6 +3,7 @@ import { sign } from 'jsonwebtoken';
 import { config } from 'dotenv';
 
 import { UserModel } from "../models/userModel";
+import { failedLoginAttempt, isLocked, succesfulLoginAttempt } from './accountLockService';
 
 config();
 
@@ -13,9 +14,15 @@ export async function authService(email: string, password: string) {
     if (!user) {
         throw new Error("Login failed");
     }
+    let locked = await isLocked(user._id);
+    if (locked.isLocked) {
+        throw new Error("Account is locked for 5 minutes");
+    }
+
     // hashes password and compares it to the one in the database
     const success = await compare(password, user.password);
     if (success) {
+        await succesfulLoginAttempt(user._id);
         let userData = user.toJSON();
         userData["password"] = 'hidden';
         // if passwords match, a token is created and returned
@@ -29,7 +36,8 @@ export async function authService(email: string, password: string) {
         const token = sign(signData, secretKey, { expiresIn: '2h'});
         return { token: token, user: userData };
     } else {
-        throw new Error("passwords dont match");
+        await failedLoginAttempt(user._id);
+        throw new Error("Login failed");
     }
 
 }

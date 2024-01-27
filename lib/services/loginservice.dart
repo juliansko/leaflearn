@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:go_router/go_router.dart';
 import 'package:leaflearn/router/routes.dart';
-import 'dart:async';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
@@ -42,7 +41,7 @@ void loginUser(BuildContext context, Widget widget, String username,
         },
         body: json.encode(requestBody));
     print(response);
-    if (response.statusCode == 200) {
+    if (response.statusCode == 200 && context.mounted) {
       context.read<LoginInfo>().login('user');
       // goes to the page it got redirected from or to home if not redirected
       if (from != null && from != '/home') {
@@ -51,14 +50,20 @@ void loginUser(BuildContext context, Widget widget, String username,
         context.go(HomeRoute(loggedIn: true).location);
       }
       // shows an error message if the username or password is incorrect
-    } else {
+    } else if (response.statusCode == 401 && context.mounted) {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('Invalid username or password'),
+        SnackBar(
+          content: Text(response.body),
         ),
       );
     }
   } catch (e) {
-    print(e);
+    if (context.mounted) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text('Login failed'),
+        ),
+      );
+    }
   }
 }
