@@ -9,6 +9,7 @@ export async function createUser(userData: UserInterface){
         console.log(user);
         return user;
     } catch (error) {
-        console.log("Error creating sample user: ", error);
+        console.log("Error creating user: ", error);
+        return error;
     }
 };

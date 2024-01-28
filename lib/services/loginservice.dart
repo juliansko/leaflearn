@@ -6,6 +6,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 // Creates class LoginInfo
+
 class LoginInfo extends ChangeNotifier {
   LoginInfo();
   String _userName = '';
@@ -42,6 +43,10 @@ void loginUser(BuildContext context, Widget widget, String username,
         body: json.encode(requestBody));
     print(response);
     if (response.statusCode == 200 && context.mounted) {
+      var token = jsonDecode(response.body)['token'];
+      print(token);
+      var user = jsonDecode(response.body)['user'];
+      print(user['experience']);
       context.read<LoginInfo>().login('user');
       // goes to the page it got redirected from or to home if not redirected
       if (from != null && from != '/home') {
@@ -58,6 +63,7 @@ void loginUser(BuildContext context, Widget widget, String username,
       );
     }
   } catch (e) {
+    print(e);
     if (context.mounted) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
