@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:leaflearn/services/authservice.dart';
 import 'package:provider/provider.dart';
 import 'package:go_router/go_router.dart';
 import 'package:leaflearn/router/routes.dart';
@@ -28,6 +29,17 @@ class LoginInfo extends ChangeNotifier {
 
 void loginUser(BuildContext context, Widget widget, String username,
     String pass, String? from) async {
+  if (await readSecure('leaflearnAuthToken') != null && context.mounted) {
+    context.read<LoginInfo>().login(username);
+    // goes to the page it got redirected from or to home if not redirected
+    if (from != null && from != '/home') {
+      context.go(from);
+    } else {
+      context.go(HomeRoute(loggedIn: true).location);
+    }
+    return null;
+  }
+
   // checks if the username and password are correct
   Uri url = Uri.http('localhost:3000', '/login');
   Map<String, String> requestBody = {
@@ -45,6 +57,7 @@ void loginUser(BuildContext context, Widget widget, String username,
     if (response.statusCode == 200 && context.mounted) {
       var token = jsonDecode(response.body)['token'];
       print(token);
+      await writeSecure('authToken', token);
       var user = jsonDecode(response.body)['user'];
       print(user['experience']);
       context.read<LoginInfo>().login('user');
