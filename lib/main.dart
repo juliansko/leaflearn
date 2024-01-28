@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:provider/provider.dart';
 import 'package:go_router/go_router.dart';
 
@@ -7,8 +8,9 @@ import 'themes/light.dart';
 import 'package:leaflearn/services/loginservice.dart';
 import 'package:leaflearn/router/routes.dart';
 
-void main() {
+Future<void> main() async {
   // starts app
+  await dotenv.load(fileName: '.env');
   runApp(App());
 }
 

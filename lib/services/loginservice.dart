@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:leaflearn/services/authservice.dart';
 import 'package:provider/provider.dart';
 import 'package:go_router/go_router.dart';
@@ -40,8 +41,9 @@ void loginUser(BuildContext context, Widget widget, String username,
     return null;
   }
 
-  // checks if the username and password are correct
-  Uri url = Uri.http('localhost:3000', '/login');
+  String? backend = dotenv.env["BACKEND_URI"];
+
+  Uri url = Uri.http(backend!, '/login');
   Map<String, String> requestBody = {
     'email': username,
     'password': pass,
