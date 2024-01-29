@@ -55,6 +55,7 @@ class AppBars extends StatelessWidget {
         onDestinationSelected: onDestinationSelected,
         // gets the color from the theme
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        labelBehavior: NavigationDestinationLabelBehavior.onlyShowSelected,
       ),
     );
   }

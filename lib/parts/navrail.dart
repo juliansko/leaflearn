@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:leaflearn/parts/progressbar.dart';
 
 class NavRail extends StatelessWidget {
   const NavRail({
@@ -40,8 +41,10 @@ class NavRail extends StatelessWidget {
               children: <Widget>[
                 Image.asset(
                   'images/logo.png',
-                  height: 50,
+                  height: 70,
                 ),
+                LevelProgress(),
+                SizedBox(height: 20),
               ],
             ),
           ),
