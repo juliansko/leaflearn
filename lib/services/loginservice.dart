@@ -46,7 +46,7 @@ void headBack(BuildContext context, String? from) {
 }
 
 Future<bool> checkConnection() async {
-  Uri url = Uri.http(backend!, '/');
+  Uri url = Uri.https(backend!, '/');
 
   try {
     final response = await http.get(url);
@@ -63,7 +63,7 @@ Future<bool> checkConnection() async {
 
 void loginUser(BuildContext context, Widget widget, String username,
     String pass, String? from) async {
-  Uri url = Uri.http(backend!, '/login');
+  Uri url = Uri.https(backend!, '/login');
   Map<String, String> requestBody = {
     'email': username,
     'password': pass,

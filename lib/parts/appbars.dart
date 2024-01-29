@@ -37,13 +37,14 @@ class AppBars extends StatelessWidget {
             padding: const EdgeInsets.only(right: 20.0),
             child: Image.asset(
               'images/logo.png',
-              height: 50,
+              height: 70,
             ),
           ),
         ],
       ),
       body: body,
       bottomNavigationBar: NavigationBar(
+        height: 60,
         // index where the user is
         selectedIndex: selectedIndex,
         destinations: const [

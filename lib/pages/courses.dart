@@ -12,7 +12,7 @@ class _CoursesPageState extends State<CoursesPage> {
   Widget build(BuildContext context) {
     return const Scaffold(
       body: Center(
-        child: Text('Courses'),
+        child: Text('Courses are coming soon!'),
       ),
     );
   }

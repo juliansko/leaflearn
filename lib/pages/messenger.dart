@@ -12,7 +12,7 @@ class _MessengerPageState extends State<MessengerPage> {
   Widget build(BuildContext context) {
     return const Scaffold(
       body: Center(
-        child: Text("Messenger"),
+        child: Text("Messenger is coming soon!"),
       ),
     );
   }
