@@ -20,7 +20,7 @@ class AppBars extends StatelessWidget {
         // gets the color from the theme
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         flexibleSpace: LayoutBuilder(
-          builder: (context, constraints) => SafeArea(
+          builder: (context, constraints) => const SafeArea(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
