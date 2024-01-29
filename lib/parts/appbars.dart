@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:leaflearn/parts/progressbar.dart';
 
 class AppBars extends StatelessWidget {
   const AppBars({
@@ -18,6 +19,18 @@ class AppBars extends StatelessWidget {
       appBar: AppBar(
         // gets the color from the theme
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        flexibleSpace: LayoutBuilder(
+          builder: (context, constraints) => SafeArea(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Spacer(),
+                LevelProgress(),
+                Spacer(),
+              ],
+            ),
+          ),
+        ),
         actions: <Widget>[
           Padding(
             // adds padding to the right of the app bar so logo sits there
@@ -26,7 +39,7 @@ class AppBars extends StatelessWidget {
               'images/logo.png',
               height: 50,
             ),
-          )
+          ),
         ],
       ),
       body: body,
