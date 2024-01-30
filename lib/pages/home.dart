@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:leaflearn/parts/coursemini.dart';
 
 class StartPage extends StatefulWidget {
   const StartPage({super.key});
@@ -8,36 +9,13 @@ class StartPage extends StatefulWidget {
 }
 
 class _StartPageState extends State<StartPage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.home),
-      ),
-    );
+    return const Scaffold(
+        body: Column(
+      children: [
+        CourseMini(title: 'Test', progress: 0.5),
+      ],
+    ));
   }
 }

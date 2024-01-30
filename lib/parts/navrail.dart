@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:leaflearn/parts/progressbar.dart';
 
 class NavRail extends StatelessWidget {
   const NavRail({
+    // inherits values from router/nestednavigation.dart
     super.key,
     required this.body,
     required this.selectedIndex,
@@ -18,7 +20,9 @@ class NavRail extends StatelessWidget {
         children: [
           // Fixed navigation rail on the left (start)
           NavigationRail(
+            // gets the color from the theme
             backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+            // index where the user is
             selectedIndex: selectedIndex,
             onDestinationSelected: onDestinationSelected,
             labelType: NavigationRailLabelType.all,
@@ -32,13 +36,15 @@ class NavRail extends StatelessWidget {
               NavigationRailDestination(
                   icon: Icon(Icons.settings), label: Text('settings')),
             ],
+            // formats logo to the top of the navigation rail
             leading: Column(
               children: <Widget>[
                 Image.asset(
                   'images/logo.png',
-                  height: 50,
-                ), // Replace with your image asset path
-                // You can add more widgets here if needed
+                  height: 70,
+                ),
+                LevelProgress(),
+                SizedBox(height: 20),
               ],
             ),
           ),

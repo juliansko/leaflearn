@@ -10,9 +10,9 @@ class CoursesPage extends StatefulWidget {
 class _CoursesPageState extends State<CoursesPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: const Center(
-        child: Text('Courses'),
+    return const Scaffold(
+      body: Center(
+        child: Text('Courses are coming soon!'),
       ),
     );
   }
