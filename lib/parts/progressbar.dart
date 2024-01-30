@@ -24,7 +24,8 @@ class _LevelProgressState extends State<LevelProgress> {
             children: [
               Text(
                 "Level $level",
-                style: const TextStyle(fontWeight: FontWeight.bold),
+                style:
+                    const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
               ),
               const SizedBox(height: 4), // Space between text and progress bar
               LinearProgressIndicator(
