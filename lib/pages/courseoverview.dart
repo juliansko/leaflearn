@@ -1,5 +1,5 @@
-import 'package:leaflearn/parts/coursemini.dart';
 import 'package:flutter/material.dart';
+import 'package:leaflearn/models/course.model.dart';
 
 class CourseOverviewPage extends StatelessWidget {
   const CourseOverviewPage({required this.course, super.key});

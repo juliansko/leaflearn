@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:leaflearn/parts/coursemini.dart';
 import 'package:leaflearn/services/loginservice.dart';
 import 'package:provider/provider.dart';
+import 'package:leaflearn/models/course.model.dart';
 
 class StartPage extends StatefulWidget {
   const StartPage({super.key});
@@ -37,10 +38,11 @@ class _StartPageState extends State<StartPage> {
     ),
   ];
   List<CourseModel> recommendedCourses = [
-    CourseModel(title: 'Garden Composting', progress: 0),
-    CourseModel(title: 'Healthy Eating', progress: 0),
-    CourseModel(title: 'Meditation', progress: 0),
-    CourseModel(title: 'Food chains', progress: 0),
+    CourseModel(
+        title: 'Garden Composting', progress: 0, content: 'Placeholder'),
+    CourseModel(title: 'Healthy Eating', progress: 0, content: 'Placeholder'),
+    CourseModel(title: 'Meditation', progress: 0, content: 'Placeholder'),
+    CourseModel(title: 'Food chains', progress: 0, content: 'Placeholder'),
   ];
 
   @override

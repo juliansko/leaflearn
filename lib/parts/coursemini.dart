@@ -1,12 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:leaflearn/pages/courseoverview.dart';
-
-class CourseModel {
-  final String title;
-  final double progress;
-
-  CourseModel({required this.title, required this.progress});
-}
+import 'package:leaflearn/models/course.model.dart';
 
 class CourseMini extends StatelessWidget {
   const CourseMini({Key? key, required this.course}) : super(key: key);

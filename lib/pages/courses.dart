@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:leaflearn/parts/coursemini.dart';
+import 'package:leaflearn/models/course.model.dart';
 
 class CoursesPage extends StatefulWidget {
   const CoursesPage({Key? key}) : super(key: key);
@@ -16,34 +17,26 @@ class _CoursesPageState extends State<CoursesPage> {
   void initState() {
     super.initState();
     allCourses = [
-      CourseModel(title: 'Garbage Collection', progress: 0.7),
       CourseModel(
-        title: 'Recycling',
-        progress: 0.3,
-      ),
+          title: 'Garbage Collection', progress: 0.7, content: 'Placeholder'),
+      CourseModel(title: 'Recycling', progress: 0.3, content: 'Placeholder'),
       CourseModel(
-        title: 'Buying Groceries',
-        progress: 0.5,
-      ),
+          title: 'Buying Groceries', progress: 0.5, content: 'Placeholder'),
       CourseModel(
-        title: 'Sustainable Cities',
-        progress: 0.5,
-      ),
+          title: 'Sustainable Cities', progress: 0.5, content: 'Placeholder'),
+      CourseModel(title: 'Green Energy', progress: 0.2, content: 'Placeholder'),
       CourseModel(
-        title: 'Green Energy',
-        progress: 0.2,
-      ),
+          title: 'Air Pollution', progress: 0.8, content: 'Placeholder'),
       CourseModel(
-        title: 'Air Pollution',
-        progress: 0.8,
-      ),
-      CourseModel(title: 'Garden Composting', progress: 0),
-      CourseModel(title: 'Healthy Eating', progress: 0),
-      CourseModel(title: 'Meditation', progress: 0),
-      CourseModel(title: 'Food chains', progress: 0),
-      CourseModel(title: 'Ethical fashion', progress: 0),
-      CourseModel(title: 'Sustainable travel', progress: 0),
-      CourseModel(title: 'Urban planning', progress: 0),
+          title: 'Garden Composting', progress: 0, content: 'Placeholder'),
+      CourseModel(title: 'Healthy Eating', progress: 0, content: 'Placeholder'),
+      CourseModel(title: 'Meditation', progress: 0, content: 'Placeholder'),
+      CourseModel(title: 'Food chains', progress: 0, content: 'Placeholder'),
+      CourseModel(
+          title: 'Ethical fashion', progress: 0, content: 'Placeholder'),
+      CourseModel(
+          title: 'Sustainable travel', progress: 0, content: 'Placeholder'),
+      CourseModel(title: 'Urban planning', progress: 0, content: 'Placeholder'),
       CourseModel(title: 'Global water ressources', progress: 0),
       CourseModel(title: 'Greenwashing', progress: 0),
       CourseModel(title: 'Sustainable architecture', progress: 0),
