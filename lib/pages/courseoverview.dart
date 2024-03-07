@@ -2,9 +2,9 @@ import 'package:leaflearn/parts/coursemini.dart';
 import 'package:flutter/material.dart';
 
 class CourseOverviewPage extends StatelessWidget {
-  CourseOverviewPage({required this.course});
+  const CourseOverviewPage({required this.course, super.key});
 
-  final Course course;
+  final CourseModel course;
 
   @override
   Widget build(BuildContext context) {
