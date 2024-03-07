@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:leaflearn/models/course.model.dart';
 
 class CourseOverviewPage extends StatelessWidget {
@@ -9,25 +10,14 @@ class CourseOverviewPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text(course.title),
+      appBar: AppBar(
+        title: Text(course.title),
+      ),
+      body: SafeArea(
+        child: Markdown(
+          data: course.content,
         ),
-        body: Center(
-          child: Padding(
-            padding: EdgeInsets.all(20.0),
-            child: Column(
-              children: [
-                Text('Overview of ${course.title}'),
-                Text(
-                  course.content,
-                  style: TextStyle(
-                    fontSize: 12,
-                    fontWeight: FontWeight.w300,
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ));
+      ),
+    );
   }
 }
