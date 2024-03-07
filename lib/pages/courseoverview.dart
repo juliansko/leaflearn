@@ -9,13 +9,25 @@ class CourseOverviewPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(course.title),
-      ),
-      body: Center(
-        // Replace with your course overview content
-        child: Text('Overview of ${course.title}'),
-      ),
-    );
+        appBar: AppBar(
+          title: Text(course.title),
+        ),
+        body: Center(
+          child: Padding(
+            padding: EdgeInsets.all(20.0),
+            child: Column(
+              children: [
+                Text('Overview of ${course.title}'),
+                Text(
+                  course.content,
+                  style: TextStyle(
+                    fontSize: 12,
+                    fontWeight: FontWeight.w300,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ));
   }
 }
