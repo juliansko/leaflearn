@@ -22,7 +22,7 @@ dev_dependencies:
   flutter_launcher_icons: "^0.13.1"
   go_router_builder: ^2.4.1
   build_runner: ^2.4.8
-  build_verify: ^3.1.0
+  build_verify: ^3.1.0d
 flutter:
   uses-material-design: true
   assets:

@@ -14,7 +14,6 @@ class StartPage extends StatefulWidget {
 class _StartPageState extends State<StartPage> {
   final ScrollController _zeroController = ScrollController();
   final ScrollController _firstController = ScrollController();
-  final ScrollController _secondController = ScrollController();
   List<CourseModel> featuredCourses = [
     CourseModel(
         title: 'Sustainable Diet',
@@ -48,17 +47,6 @@ class _StartPageState extends State<StartPage> {
       title: 'Air Pollution',
       progress: 0.8,
     ),
-  ];
-  List<CourseModel> recommendedCourses = [
-    CourseModel(
-        title: 'Garden Composting', progress: 0, overview: 'Placeholder'),
-    CourseModel(
-        title: 'Healthy Eating',
-        progress: 0,
-        overview:
-            'Die weltweite ***Lebensmittelproduktion*** beansprucht mehr als ein Drittel der Landfläche und trägt etwa 30% der anthropogenen Treibhausgasemissionen bei.![](images/burger.jpeg) Die Umweltauswirkungen dieser Produktion sind als erhebliche Bedrohung für die Umwelt identifiziert worden. Technologische Fortschritte in der Landwirtschaft allein reichen nicht aus, um diesen Herausforderungen zu begegnen. Veränderungen hin zu nachhaltigeren Essgewohnheiten werden als entscheidend angesehen, um die Umweltbelastung des Ernährungssystems zu verringern.'),
-    CourseModel(title: 'Meditation', progress: 0, overview: 'Placeholder'),
-    CourseModel(title: 'Food chains', progress: 0, overview: 'Placeholder'),
   ];
 
   @override
@@ -135,36 +123,6 @@ class _StartPageState extends State<StartPage> {
               ),
               const Divider(),
               const SizedBox(height: 10),
-
-              Text(
-                'Recommended for you:',
-                style: Theme.of(context).textTheme.titleMedium,
-              ),
-              const SizedBox(height: 10),
-              Container(
-                height: 100,
-                child: Scrollbar(
-                  //isAlwaysShown: true,
-                  thumbVisibility: true,
-                  controller: _secondController,
-                  thickness: 6.0,
-                  radius: const Radius.circular(5.0),
-                  child: ListView.builder(
-                    controller: _secondController,
-                    scrollDirection: Axis.horizontal,
-                    itemCount: recommendedCourses.length,
-                    itemBuilder: (context, index) {
-                      return Padding(
-                        padding: const EdgeInsets.only(
-                            right: 8), // Space between items
-                        child: CourseMini(
-                          course: recommendedCourses[index],
-                        ),
-                      );
-                    },
-                  ),
-                ),
-              ),
             ],
           ),
         );
