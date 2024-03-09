@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:leaflearn/content/courses.dart';
 import 'package:leaflearn/parts/coursemini.dart';
 import 'package:leaflearn/services/loginservice.dart';
 import 'package:provider/provider.dart';
@@ -20,10 +21,7 @@ class _StartPageState extends State<StartPage> {
         progress: 0,
         overview:
             'Die weltweite ***Lebensmittelproduktion*** beansprucht mehr als ein Drittel der Landfläche und trägt etwa 30% der anthropogenen Treibhausgasemissionen bei.![](images/burger.jpeg) Die Umweltauswirkungen dieser Produktion sind als erhebliche Bedrohung für die Umwelt identifiziert worden. Technologische Fortschritte in der Landwirtschaft allein reichen nicht aus, um diesen Herausforderungen zu begegnen. Veränderungen hin zu nachhaltigeren Essgewohnheiten werden als entscheidend angesehen, um die Umweltbelastung des Ernährungssystems zu verringern.'),
-    CourseModel(
-        title: 'Sustainable Lifestyle',
-        progress: 0,
-        overview: 'Overview for Sustainable Diet')
+    healthyLifeStyle,
   ];
   List<CourseModel> courses = [
     CourseModel(title: 'Garbage Collection', progress: 0.7),

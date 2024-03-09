@@ -1,8 +1,10 @@
+import 'package:leaflearn/models/lesson.model.dart';
+
 class CourseModel {
   final String title;
   final double progress;
   String overview;
-  List<Object> chapters;
+  List<LessonModel> chapters;
 
   CourseModel(
       {required this.title,
