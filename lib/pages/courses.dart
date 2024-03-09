@@ -18,29 +18,31 @@ class _CoursesPageState extends State<CoursesPage> {
     super.initState();
     allCourses = [
       CourseModel(
-          title: 'Garbage Collection', progress: 0.7, content: 'Placeholder'),
-      CourseModel(title: 'Recycling', progress: 0.3, content: 'Placeholder'),
+          title: 'Garbage Collection', progress: 0.7, overview: 'Placeholder'),
+      CourseModel(title: 'Recycling', progress: 0.3, overview: 'Placeholder'),
       CourseModel(
-          title: 'Buying Groceries', progress: 0.5, content: 'Placeholder'),
+          title: 'Buying Groceries', progress: 0.5, overview: 'Placeholder'),
       CourseModel(
-          title: 'Sustainable Cities', progress: 0.5, content: 'Placeholder'),
-      CourseModel(title: 'Green Energy', progress: 0.2, content: 'Placeholder'),
+          title: 'Sustainable Cities', progress: 0.5, overview: 'Placeholder'),
       CourseModel(
-          title: 'Air Pollution', progress: 0.8, content: 'Placeholder'),
+          title: 'Green Energy', progress: 0.2, overview: 'Placeholder'),
       CourseModel(
-          title: 'Garden Composting', progress: 0, content: 'Placeholder'),
+          title: 'Air Pollution', progress: 0.8, overview: 'Placeholder'),
+      CourseModel(
+          title: 'Garden Composting', progress: 0, overview: 'Placeholder'),
       CourseModel(
           title: 'Healthy Eating',
           progress: 0,
-          content:
+          overview:
               'Die weltweite ***Lebensmittelproduktion*** beansprucht mehr als ein Drittel der Landfläche und trägt etwa 30% der anthropogenen Treibhausgasemissionen bei. Die Umweltauswirkungen dieser Produktion sind als erhebliche Bedrohung für die Umwelt identifiziert worden. Technologische Fortschritte in der Landwirtschaft allein reichen nicht aus, um diesen Herausforderungen zu begegnen. Veränderungen hin zu nachhaltigeren Essgewohnheiten werden als entscheidend angesehen, um die Umweltbelastung des Ernährungssystems zu verringern. '),
-      CourseModel(title: 'Meditation', progress: 0, content: 'Placeholder'),
-      CourseModel(title: 'Food chains', progress: 0, content: 'Placeholder'),
+      CourseModel(title: 'Meditation', progress: 0, overview: 'Placeholder'),
+      CourseModel(title: 'Food chains', progress: 0, overview: 'Placeholder'),
       CourseModel(
-          title: 'Ethical fashion', progress: 0, content: 'Placeholder'),
+          title: 'Ethical fashion', progress: 0, overview: 'Placeholder'),
       CourseModel(
-          title: 'Sustainable travel', progress: 0, content: 'Placeholder'),
-      CourseModel(title: 'Urban planning', progress: 0, content: 'Placeholder'),
+          title: 'Sustainable travel', progress: 0, overview: 'Placeholder'),
+      CourseModel(
+          title: 'Urban planning', progress: 0, overview: 'Placeholder'),
       CourseModel(title: 'Global water ressources', progress: 0),
       CourseModel(title: 'Greenwashing', progress: 0),
       CourseModel(title: 'Sustainable architecture', progress: 0),

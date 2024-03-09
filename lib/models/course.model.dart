@@ -1,10 +1,12 @@
 class CourseModel {
   final String title;
   final double progress;
-  String content;
+  String overview;
+  List<Object> chapters;
 
   CourseModel(
       {required this.title,
       required this.progress,
-      this.content = 'Placeholder'});
+      this.overview = 'This is the overview for the course',
+      this.chapters = const []});
 }

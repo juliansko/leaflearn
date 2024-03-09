@@ -15,7 +15,7 @@ class CourseOverviewPage extends StatelessWidget {
       ),
       body: SafeArea(
         child: Markdown(
-          data: course.content,
+          data: course.overview,
         ),
       ),
     );

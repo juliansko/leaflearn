@@ -12,8 +12,20 @@ class StartPage extends StatefulWidget {
 }
 
 class _StartPageState extends State<StartPage> {
+  final ScrollController _zeroController = ScrollController();
   final ScrollController _firstController = ScrollController();
   final ScrollController _secondController = ScrollController();
+  List<CourseModel> featuredCourses = [
+    CourseModel(
+        title: 'Sustainable Diet',
+        progress: 0,
+        overview:
+            'Die weltweite ***Lebensmittelproduktion*** beansprucht mehr als ein Drittel der Landfläche und trägt etwa 30% der anthropogenen Treibhausgasemissionen bei.![](images/burger.jpeg) Die Umweltauswirkungen dieser Produktion sind als erhebliche Bedrohung für die Umwelt identifiziert worden. Technologische Fortschritte in der Landwirtschaft allein reichen nicht aus, um diesen Herausforderungen zu begegnen. Veränderungen hin zu nachhaltigeren Essgewohnheiten werden als entscheidend angesehen, um die Umweltbelastung des Ernährungssystems zu verringern.'),
+    CourseModel(
+        title: 'Sustainable Lifestyle',
+        progress: 0,
+        overview: 'Overview for Sustainable Diet')
+  ];
   List<CourseModel> courses = [
     CourseModel(title: 'Garbage Collection', progress: 0.7),
     CourseModel(
@@ -39,10 +51,14 @@ class _StartPageState extends State<StartPage> {
   ];
   List<CourseModel> recommendedCourses = [
     CourseModel(
-        title: 'Garden Composting', progress: 0, content: 'Placeholder'),
-    CourseModel(title: 'Healthy Eating', progress: 0, content: 'Placeholder'),
-    CourseModel(title: 'Meditation', progress: 0, content: 'Placeholder'),
-    CourseModel(title: 'Food chains', progress: 0, content: 'Placeholder'),
+        title: 'Garden Composting', progress: 0, overview: 'Placeholder'),
+    CourseModel(
+        title: 'Healthy Eating',
+        progress: 0,
+        overview:
+            'Die weltweite ***Lebensmittelproduktion*** beansprucht mehr als ein Drittel der Landfläche und trägt etwa 30% der anthropogenen Treibhausgasemissionen bei.![](images/burger.jpeg) Die Umweltauswirkungen dieser Produktion sind als erhebliche Bedrohung für die Umwelt identifiziert worden. Technologische Fortschritte in der Landwirtschaft allein reichen nicht aus, um diesen Herausforderungen zu begegnen. Veränderungen hin zu nachhaltigeren Essgewohnheiten werden als entscheidend angesehen, um die Umweltbelastung des Ernährungssystems zu verringern.'),
+    CourseModel(title: 'Meditation', progress: 0, overview: 'Placeholder'),
+    CourseModel(title: 'Food chains', progress: 0, overview: 'Placeholder'),
   ];
 
   @override
@@ -58,6 +74,37 @@ class _StartPageState extends State<StartPage> {
                   style: Theme.of(context).textTheme.titleLarge),
               const SizedBox(height: 20),
               Text(
+                'Featured courses:',
+                style: Theme.of(context).textTheme.titleMedium,
+              ),
+              const SizedBox(height: 10), // Space between the text and the list
+              Container(
+                height: 100,
+                child: Scrollbar(
+                  //isAlwaysShown: true,
+                  thumbVisibility: false,
+                  controller: _zeroController,
+                  thickness: 6.0,
+                  radius: const Radius.circular(5.0),
+                  child: ListView.builder(
+                    controller: _firstController,
+                    scrollDirection: Axis.horizontal,
+                    itemCount: featuredCourses.length,
+                    itemBuilder: (context, index) {
+                      return Padding(
+                        padding: const EdgeInsets.only(
+                            right: 8), // Space between items
+                        child: CourseMini(
+                          course: featuredCourses[index],
+                        ),
+                      );
+                    },
+                  ),
+                ),
+              ),
+              const Divider(),
+              const SizedBox(height: 10),
+              Text(
                 'Your courses:',
                 style: Theme.of(context).textTheme.titleMedium,
               ),
@@ -66,7 +113,7 @@ class _StartPageState extends State<StartPage> {
                 height: 100,
                 child: Scrollbar(
                   //isAlwaysShown: true,
-                  thumbVisibility: true,
+                  thumbVisibility: false,
                   controller: _firstController,
                   thickness: 6.0,
                   radius: const Radius.circular(5.0),
