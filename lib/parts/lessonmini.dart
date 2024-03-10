@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:leaflearn/pages/courseoverview.dart';
-import 'package:leaflearn/models/course.model.dart';
+import 'package:leaflearn/models/lesson.model.dart';
+import 'package:leaflearn/pages/lesson.dart';
 
-class CourseMini extends StatelessWidget {
-  const CourseMini({Key? key, required this.course}) : super(key: key);
-  final CourseModel course;
+class LessonMini extends StatelessWidget {
+  const LessonMini({Key? key, required this.lesson}) : super(key: key);
+  final LessonModel lesson;
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +14,7 @@ class CourseMini extends StatelessWidget {
             context,
             MaterialPageRoute(
               builder: (context) =>
-                  CourseOverviewPage(course: course), // CourseOverviewPage
+                  LessonPage(lesson: lesson), // CourseOverviewPage
             ));
       },
       child: Container(
@@ -39,24 +39,14 @@ class CourseMini extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                course.title,
+                lesson.title,
                 style: const TextStyle(
                   color: Colors.white,
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              const SizedBox(
-                  height: 8), // Spacing between text and progress bar
-              SizedBox(
-                width:
-                    150, // Width of the progress bar, less than container width
-                child: LinearProgressIndicator(
-                    value: course.progress,
-                    color: Theme.of(context).colorScheme.primary,
-                    minHeight: 7,
-                    borderRadius: const BorderRadius.all(Radius.circular(5))),
-              ),
+              const SizedBox(height: 8),
             ],
           ),
         ),

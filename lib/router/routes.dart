@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import 'package:leaflearn/pages/courses.dart';
+import 'package:leaflearn/pages/allcourses.dart';
 import 'package:leaflearn/pages/home.dart';
 import 'package:leaflearn/pages/login.dart';
 import 'package:leaflearn/pages/messenger.dart';
