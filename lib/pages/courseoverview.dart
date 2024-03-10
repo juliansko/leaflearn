@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:leaflearn/models/course.model.dart';
+import 'package:leaflearn/parts/lessonmini.dart';
 
 class CourseOverviewPage extends StatefulWidget {
   const CourseOverviewPage({required this.course, super.key});
@@ -39,11 +40,12 @@ class _CourseOverviewPageState extends State<CourseOverviewPage> {
           SliverList(
             delegate: SliverChildBuilderDelegate(
               (BuildContext context, int index) {
-                return ListTile(
-                  title: Text(course.chapters[index].title),
-                  onTap: () {
-                    // Go to the chapter
-                  },
+                return Padding(
+                  padding:
+                      const EdgeInsets.only(right: 8), // Space between items
+                  child: LessonMini(
+                    lesson: course.chapters[index],
+                  ),
                 );
               },
               childCount: course.chapters.length,

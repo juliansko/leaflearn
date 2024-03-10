@@ -1,28 +1,39 @@
+import 'package:leaflearn/content/lifestyle/chapter1_1.dart';
+import 'package:leaflearn/content/lifestyle/chapter1_2.dart';
+import 'package:leaflearn/content/lifestyle/chapter2_1.dart';
+import 'package:leaflearn/content/lifestyle/chapter2_2.dart';
+import 'package:leaflearn/content/lifestyle/chapter3_1.dart';
+import 'package:leaflearn/content/lifestyle/chapter3_2.dart';
+import 'package:leaflearn/content/lifestyle/chapter4_1.dart';
+import 'package:leaflearn/content/lifestyle/chapter4_2.dart';
+import 'package:leaflearn/content/lifestyle/chapter5_1.dart';
+import 'package:leaflearn/content/lifestyle/chapter5_2.dart';
+import 'package:leaflearn/content/lifestyle/chapter6_1.dart';
+import 'package:leaflearn/content/lifestyle/chapter6_2.dart';
+import 'package:leaflearn/content/lifestyle/chapter7_1.dart';
+import 'package:leaflearn/content/lifestyle/chapter7_2.dart';
 import 'package:leaflearn/models/course.model.dart';
-import 'package:leaflearn/models/lesson.model.dart';
 
 CourseModel healthyLifeStyle = CourseModel(
-    title: 'Healthy Lifestyle',
+    title: 'Gesunder Lebensstil',
     progress: 0,
     overview:
-        'This course is designed to help you live a healthy lifestyle. It covers topics such as healthy eating, exercise, and mental health.',
+        'Dieser Kurs hilft dir dabei, einen gesunden Lebensstil zu führen',
     chapters: [
-      LessonModel(title: 'Introduction to Healthy Lifestyle', content: """
-  # Introduction
-  This chapter introduces the concept of a healthy lifestyle and its importance. It also provides an overview of the topics covered in the course.
-  """),
-      LessonModel(title: 'Healthy Eating', content: """
-  # Healthy Eating
-  This chapter covers the importance of healthy eating and provides tips on how to maintain a healthy diet.
-  """),
-      LessonModel(title: 'Exercise', content: """
-  # Exercise
-  This chapter covers the importance of exercise and provides tips on how to maintain an active lifestyle.
-  """),
-      LessonModel(title: 'Mental Health', content: """
-  # Mental Health
-  This chapter covers the importance of mental health and provides tips on how to maintain a healthy mind.
-  """)
+      chapter1_1,
+      chapter1_2,
+      chapter2_1,
+      chapter2_2,
+      chapter3_1,
+      chapter3_2,
+      chapter4_1,
+      chapter4_2,
+      chapter5_1,
+      chapter5_2,
+      chapter6_1,
+      chapter6_2,
+      chapter7_1,
+      chapter7_2,
     ]);
 
 var healthyDiet = CourseModel(title: 'Healthy Diet', progress: 0);

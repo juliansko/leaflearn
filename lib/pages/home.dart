@@ -16,11 +16,7 @@ class _StartPageState extends State<StartPage> {
   final ScrollController _zeroController = ScrollController();
   final ScrollController _firstController = ScrollController();
   List<CourseModel> featuredCourses = [
-    CourseModel(
-        title: 'Sustainable Diet',
-        progress: 0,
-        overview:
-            'Die weltweite ***Lebensmittelproduktion*** beansprucht mehr als ein Drittel der Landfläche und trägt etwa 30% der anthropogenen Treibhausgasemissionen bei.![](images/burger.jpeg) Die Umweltauswirkungen dieser Produktion sind als erhebliche Bedrohung für die Umwelt identifiziert worden. Technologische Fortschritte in der Landwirtschaft allein reichen nicht aus, um diesen Herausforderungen zu begegnen. Veränderungen hin zu nachhaltigeren Essgewohnheiten werden als entscheidend angesehen, um die Umweltbelastung des Ernährungssystems zu verringern.'),
+    healthyDiet,
     healthyLifeStyle,
   ];
   List<CourseModel> courses = [
