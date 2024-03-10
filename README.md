@@ -4,13 +4,6 @@ LeafLearn, the green and sustainable learning platform!
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+This project is a student project for the University of Duisburg-Essen
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+To install the app you need to go to the "Releases section and download the appropriate apk (if you have a phone or tablet it is most probably the armv8 version, you will know if you need the x86 version)
