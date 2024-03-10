@@ -64,7 +64,7 @@ class _StartPageState extends State<StartPage> {
                 style: Theme.of(context).textTheme.titleMedium,
               ),
               const SizedBox(height: 10), // Space between the text and the list
-              Container(
+              SizedBox(
                 height: 100,
                 child: Scrollbar(
                   //isAlwaysShown: true,
@@ -95,7 +95,7 @@ class _StartPageState extends State<StartPage> {
                 style: Theme.of(context).textTheme.titleMedium,
               ),
               const SizedBox(height: 10), // Space between the text and the list
-              Container(
+              SizedBox(
                 height: 100,
                 child: Scrollbar(
                   //isAlwaysShown: true,

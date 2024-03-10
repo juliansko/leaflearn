@@ -65,7 +65,7 @@ class _CoursesPageState extends State<CoursesPage> {
               Text("All courses",
                   style: Theme.of(context).textTheme.titleLarge),
               const SizedBox(height: 10),
-              Container(
+              SizedBox(
                 height: 1000,
                 width: 500,
                 child: Scrollbar(
