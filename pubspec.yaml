@@ -15,6 +15,7 @@ dependencies:
   flutter_secure_storage: ^9.0.0
   flutter_dotenv: ^5.1.0
   flutter_markdown: ^0.6.20
+  web: ^0.5.1
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -26,9 +27,7 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
-      - courses/
       - images/logo.png
-      - images/burger.jpeg
       - .env
 flutter_launcher_icons:
   android: "launcher_icon"
